@@ -34,7 +34,7 @@ namespace SparkBot
 
             // Tokens should be considered secret data and never hard-coded.
             // We can read from the environment variable to avoid hardcoding.
-            await client.LoginAsync(TokenType.Bot, "NTg0MTI3MzQzNzc0NDAwNTE2.XPGaZg.KnI8vqL2O499AU9VZSl32-Bsty4");
+            await client.LoginAsync(TokenType.Bot, "<Token Redacted for privacy reasons>");
             await client.StartAsync();
 
             // Here we initialize the logic required to register our commands.
