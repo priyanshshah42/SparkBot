@@ -144,45 +144,27 @@ namespace SparkBot.Modules
         {
             Random random = new Random();
             int bot = random.Next(3);
-            bool snip = (Context.User.Id == 263085046775283712);
-
-            if (!snip)
-            {
-                if (choice == "r" && bot == 0)
-                    await ReplyAsync($"{Context.User.Username} picked rock and I picked rock. Draw.");
-                else if (choice == "r" && bot == 1)
-                    await ReplyAsync($"{Context.User.Username} picked rock and I picked paper. Hold this L.");
-                else if (choice == "r" && bot == 2)
-                    await ReplyAsync($"{Context.User.Username} picked rock and I picked scissors. {Context.User.Username} wins.");
-                else if (choice == "p" && bot == 0)
-                    await ReplyAsync($"{Context.User.Username} picked paper and I picked rock. {Context.User.Username} wins.");
-                else if (choice == "p" && bot == 1)
-                    await ReplyAsync($"{Context.User.Username} picked paper and I picked paper. Draw.");
-                else if (choice == "p" && bot == 2)
-                    await ReplyAsync($"{Context.User.Username} picked paper and I picked scissors. Hold this L.");
-                else if (choice == "s" && bot == 0)
-                    await ReplyAsync($"{Context.User.Username} picked scissors and I picked rock. Hold this L.");
-                else if (choice == "s" && bot == 1)
-                    await ReplyAsync($"{Context.User.Username} picked scissors and I picked paper. {Context.User.Username} wins.");
-                else if (choice == "s" && bot == 2)
-                    await ReplyAsync($"{Context.User.Username} picked scissors and I picked scissors. Draw.");
-                else
-                    await ReplyAsync("Please enter your choice as `r`, `p` or `s`.");
-            }
+                        
+            if (choice == "r" && bot == 0)
+                await ReplyAsync($"{Context.User.Username} picked rock and I picked rock. Draw.");
+            else if (choice == "r" && bot == 1)
+                await ReplyAsync($"{Context.User.Username} picked rock and I picked paper. Hold this L.");
+            else if (choice == "r" && bot == 2)
+                await ReplyAsync($"{Context.User.Username} picked rock and I picked scissors. {Context.User.Username} wins.");
+            else if (choice == "p" && bot == 0)
+                await ReplyAsync($"{Context.User.Username} picked paper and I picked rock. {Context.User.Username} wins.");
+            else if (choice == "p" && bot == 1)
+                await ReplyAsync($"{Context.User.Username} picked paper and I picked paper. Draw.");
+            else if (choice == "p" && bot == 2)
+                await ReplyAsync($"{Context.User.Username} picked paper and I picked scissors. Hold this L.");
+            else if (choice == "s" && bot == 0)
+                await ReplyAsync($"{Context.User.Username} picked scissors and I picked rock. Hold this L.");
+            else if (choice == "s" && bot == 1)
+                await ReplyAsync($"{Context.User.Username} picked scissors and I picked paper. {Context.User.Username} wins.");
+            else if (choice == "s" && bot == 2)
+                await ReplyAsync($"{Context.User.Username} picked scissors and I picked scissors. Draw.");
             else
-            {
-                if (choice == "r" || choice == "p")
-                    await ReplyAsync("Snippy boi isn't allowed to choose that :wink:");
-                else if (choice == "s" && bot == 0)
-                    await ReplyAsync($"{Context.User.Username} picked scissors and I picked rock. Hold this L.");
-                else if (choice == "s" && bot == 1)
-                    await ReplyAsync($"{Context.User.Username} picked scissors and I picked paper. {Context.User.Username} wins.");
-                else if (choice == "s" && bot == 2)
-                    await ReplyAsync($"{Context.User.Username} picked scissors and I picked scissors. Draw.");
-                else
-                    await ReplyAsync("Please enter your choice as `r`, `p` or `s`.");
-            }
-            
+                await ReplyAsync("Please enter your choice as `r`, `p` or `s`.");
         }
 
         [Command("spam")]
@@ -211,7 +193,7 @@ namespace SparkBot.Modules
                 for (int i = 1; i <= spamCount; i++)
                     await ReplyAsync(phrase, true);
             }
-            else await ReplyAsync("Cyka blyat, if you want me to spam something do `%spam <message> <number of spams>`.");
+            else await ReplyAsync("If you want me to spam something do `s!spam <message> <number of spams>`.");
         }
 
         #endregion
